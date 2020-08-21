@@ -1,0 +1,53 @@
+{
+  "locked": false,
+  "disabled": false,
+  "private": true,
+  "details": {
+    "website": "",
+    "phoneNumber": "",
+    "emailAddress": "",
+    "termsConditions": "",
+    "privacyPolicy": "",
+    "avatarUrl": "/api/v1/bots/cronos/media/2x7c5ibxvm2rowmuhyd9-20121130_071319_4894_JkR.png",
+    "coverPictureUrl": ""
+  },
+  "$schema": "../../bot.config.schema.json",
+  "description": "Hélios était le Dieu grec du Soleil (représentant l'astre lumineux lui-même). Il renvoi également aux deux sondes (mission spatiales) placées en orbite autour du Soleil.",
+  "active": true,
+  "version": "12.10.2",
+  "author": "Botpress, Inc.",
+  "license": "AGPL-3.0",
+  "imports": {
+    "modules": [],
+    "incomingMiddleware": [],
+    "outgoingMiddleware": [],
+    "contentTypes": [
+      "builtin_action-button",
+      "builtin_card",
+      "builtin_carousel",
+      "builtin_image",
+      "builtin_single-choice",
+      "builtin_text",
+      "dropdown"
+    ]
+  },
+  "dialog": {
+    "timeoutInterval": "5m"
+  },
+  "logs": {
+    "expiration": "1 week"
+  },
+  "defaultLanguage": "en",
+  "languages": [
+    "en"
+  ],
+  "id": "cronos",
+  "name": "Hélios",
+  "pipeline_status": {
+    "current_stage": {
+      "id": "prod",
+      "promoted_on": "2020-08-21T12:59:19.186Z",
+      "promoted_by": "system"
+    }
+  }
+}

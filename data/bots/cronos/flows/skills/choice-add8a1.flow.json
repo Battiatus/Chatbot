@@ -1,0 +1,99 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "ma3lwiox8r",
+    "contentId": "builtin_single-choice-o7c4PD",
+    "invalidContentId": "builtin_text-bkjpDx",
+    "keywords": {
+      "Flight details": [
+        "Flight details"
+      ],
+      "PathFinder web page": [
+        "PathFinder web page"
+      ],
+      "Send mail": [
+        "Send mail"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-o7c4PD {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "196590"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"ma3lwiox8r\",\"contentId\":\"builtin_single-choice-o7c4PD\",\"invalidContentId\":\"builtin_text-bkjpDx\",\"keywords\":{\"Flight details\":[\"Flight details\"],\"PathFinder web page\":[\"PathFinder web page\"],\"Send mail\":[\"Send mail\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-ma3lwiox8r'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "530330"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"ma3lwiox8r\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-ma3lwiox8r']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "336338"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [
+        "say #!builtin_text-bkjpDx {}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "703104"
+    }
+  ]
+}

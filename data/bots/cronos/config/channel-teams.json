@@ -1,0 +1,7 @@
+{
+  "$schema": "../../assets/modules/channel-teams/config.schema.json",
+  "enabled": true,
+  "appId": "5df74cb1-30fb-40d3-abf1-da162d0a9cc3",
+  "appPassword": "7Eyzz0fJHR2Zib2L~4kNFK~k65qvI-5nR~",
+  "chatUserAuthDuration": "24h"
+}

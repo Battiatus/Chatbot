@@ -1,0 +1,97 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "5v496fale1",
+    "contentId": "builtin_single-choice-HVO4rj",
+    "invalidContentId": "builtin_text-FNcbJu",
+    "keywords": {
+      "Track a Shipment": [
+        "Track a Shipment"
+      ],
+      "Other": [
+        "Other"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": true
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-HVO4rj {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "107800"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"5v496fale1\",\"contentId\":\"builtin_single-choice-HVO4rj\",\"invalidContentId\":\"builtin_text-FNcbJu\",\"keywords\":{\"Track a Shipment\":[\"Track a Shipment\"],\"Other\":[\"Other\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":true}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-5v496fale1'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "450798"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"5v496fale1\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-5v496fale1']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "681736"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [
+        "say #!builtin_text-FNcbJu {}",
+        "say #!builtin_single-choice-HVO4rj {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "161671"
+    }
+  ]
+}

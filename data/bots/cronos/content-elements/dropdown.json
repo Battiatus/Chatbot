@@ -1,0 +1,45 @@
+[
+  {
+    "id": "dropdown-BbNwBH",
+    "formData": {
+      "buttonText$en": "",
+      "width$en": 200,
+      "displayInKeyboard$en": true,
+      "typing$en": true,
+      "message$en": "Please select one of the airline code",
+      "options$en": [
+        {
+          "label": "191",
+          "value": "191"
+        },
+        {
+          "label": "375",
+          "value": "375"
+        },
+        {
+          "label": "478",
+          "value": "478"
+        },
+        {
+          "label": "596",
+          "value": "596"
+        },
+        {
+          "label": "612",
+          "value": "612"
+        },
+        {
+          "label": "649",
+          "value": "649"
+        },
+        {
+          "label": "881",
+          "value": "881"
+        }
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-10T13:58:31.082Z",
+    "modifiedOn": "2020-07-11T14:06:11.791Z"
+  }
+]

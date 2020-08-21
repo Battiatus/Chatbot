@@ -1,0 +1,21 @@
+{
+  "name": "__qna__633zkh7pew_track_a_shipment",
+  "contexts": [
+    "Tracking"
+  ],
+  "utterances": {
+    "en": [
+      "Track a shipment",
+      "track",
+      "Tracking",
+      "tracking",
+      "shipment position",
+      "shipment status",
+      "package position",
+      "package status",
+      "I want to know where is my shipment",
+      "View status of my shipment"
+    ]
+  },
+  "slots": []
+}

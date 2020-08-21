@@ -3,7 +3,9 @@
     "id": "default",
     "name": "Default",
     "audience": "external",
-    "bots": [],
+    "bots": [
+      "cronos"
+    ],
     "roles": [
       {
         "id": "admin",

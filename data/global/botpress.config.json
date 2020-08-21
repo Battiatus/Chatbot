@@ -166,7 +166,10 @@
     }
   },
   "superAdmins": [
-    {}
+    {
+      "email": "samatana.rugaamet@gmail.com",
+      "strategy": "default"
+    }
   ],
   "sendUsageStats": true,
   "dataRetention": {

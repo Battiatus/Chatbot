@@ -1,0 +1,22 @@
+{
+  "id": "tracking",
+  "name": "Tracking",
+  "type": "list",
+  "occurrences": [
+    {
+      "name": "Tracking",
+      "synonyms": [
+        "track",
+        "track a shipment",
+        "Track a package",
+        "Tracking a package",
+        "tracking a shipment",
+        "tracking shipment"
+      ]
+    }
+  ],
+  "sensitive": false,
+  "fuzzy": 1,
+  "examples": [],
+  "pattern": ""
+}

@@ -1,0 +1,489 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "Welcoming",
+  "nodes": [
+    {
+      "id": "03a9a384d4",
+      "name": "Say_Shipment_tracking_info_node",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice_pathfinder_result_1"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-2ARQI7"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "3122d7f58c",
+      "name": "Anything_else_question",
+      "next": [
+        {
+          "condition": "true",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-0LD-Ry"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "5a6f2817d4",
+      "name": "Pathfinder_request_node",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Waiting_message"
+        },
+        {
+          "condition": "true",
+          "node": "no_result_found"
+        }
+      ],
+      "onEnter": [
+        "Pathfinder-tracking {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-23b57e",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Request_choice",
+      "flow": "skills/choice-23b57e.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Track a...]",
+          "condition": "temp['skill-choice-ret-5v496fale1'] == \"Track a Shipment\"",
+          "node": "prefix_information"
+        },
+        {
+          "caption": "User picked [Other]",
+          "condition": "temp['skill-choice-ret-5v496fale1'] == \"Other\"",
+          "node": "Other"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "error.flow.json"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'tracking'",
+          "node": "prefix_information"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "552ff3ff71",
+      "name": "Welcoming",
+      "next": [
+        {
+          "condition": "user.username !==undefined",
+          "node": "Request_choice"
+        },
+        {
+          "condition": "true",
+          "node": "Request_choice"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-tC53zN"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "97be8840a6",
+      "name": "Error_fixing_oops-copy",
+      "onEnter": [
+        "say #!builtin_text-U9UH-X",
+        "say #!builtin_text-TMRLRT"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "Anything_else_question"
+        }
+      ]
+    },
+    {
+      "id": "skill-add8a1",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice_pathfinder_result_1",
+      "flow": "skills/choice-add8a1.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Flight ...]",
+          "condition": "temp['skill-choice-ret-ma3lwiox8r'] == \"Flight details\"",
+          "node": "Flight_status"
+        },
+        {
+          "caption": "User picked [PathFin...]",
+          "condition": "temp['skill-choice-ret-ma3lwiox8r'] == \"PathFinder web page\"",
+          "node": "pathfinder_web_page"
+        },
+        {
+          "caption": "User picked [Send ma...]",
+          "condition": "temp['skill-choice-ret-ma3lwiox8r'] == \"Send mail\"",
+          "node": "mail_address"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "Bye"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "08f6c1dda3",
+      "name": "AWB_entering",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Pathfinder_request_node"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-4fpfku"
+      ],
+      "onReceive": [
+        "builtin/resetGlobalVariable {\"name\":\"awb\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"awb\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "f88be072d9",
+      "name": "select_prefix",
+      "next": [
+        {
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": [
+        "say #!dropdown-BbNwBH"
+      ],
+      "onReceive": [
+        "builtin/resetGlobalVariable {\"name\":\"prefix\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"prefix\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "a0d28aa263",
+      "name": "pathfinder_web_page",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-3dbc10"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Zpjs7a"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "961911a0c5",
+      "name": "Flight_status",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-68f00b"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ue8_MZ"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "3e6c98eb5d",
+      "name": "Bye",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-gv6bbm"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9d646b1489",
+      "name": "Other",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-s4xlEN",
+        "say #!builtin_text-_w3TaR"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-68f00b",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-68f00b",
+      "flow": "skills/choice-68f00b.flow.json",
+      "next": [
+        {
+          "caption": "User picked [More in...]",
+          "condition": "temp['skill-choice-ret-e4b4fw6um9'] == \"More information\"",
+          "node": "pathfinder_web_page"
+        },
+        {
+          "caption": "User picked [Send to...]",
+          "condition": "temp['skill-choice-ret-e4b4fw6um9'] == \"Send to mail\"",
+          "node": "mail_address"
+        },
+        {
+          "caption": "User picked [New req...]",
+          "condition": "temp['skill-choice-ret-e4b4fw6um9'] == \"New request\"",
+          "node": "prefix_information"
+        },
+        {
+          "caption": "User picked [No than...]",
+          "condition": "temp['skill-choice-ret-e4b4fw6um9'] == \"No thanks\"",
+          "node": "Bye"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "Error_fixing_oopss"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "34ad7e81f3",
+      "name": "mail_address",
+      "next": [
+        {
+          "condition": "true",
+          "node": "mail_request"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-A4cai5"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"mail\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "e37205cb01",
+      "name": "mail_request",
+      "next": [
+        {
+          "condition": "true",
+          "node": "mail_send"
+        }
+      ],
+      "onEnter": [
+        "mail {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7d1600e8e4",
+      "name": "mail_send",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-3dbc10"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-WChlx9"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "d1ec028f37",
+      "name": "nice_to_meet",
+      "next": [
+        {
+          "condition": "temp.$r ===0",
+          "node": "first_time"
+        },
+        {
+          "condition": "temp.$r >0",
+          "node": "Request_choice"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ldwMja",
+        "builtin/getNumberOfConversations {\"output\":\"$r\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9fce8d08d6",
+      "name": "name_asking",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nice_to_meet"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-yuWaxj"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"username\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "3089573247",
+      "name": "first_time",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Request_choice"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-UH42If"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "647fe49f89",
+      "name": "Forget_user",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-PVxgrI",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"username\",\"value\":\"null\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "bcf3406b95",
+      "name": "Error_fixing_oopss",
+      "onEnter": [
+        "say #!builtin_text-Lutc4Z",
+        "say #!builtin_text-rIM1Ti"
+      ],
+      "onReceive": null,
+      "next": []
+    },
+    {
+      "id": "cf5cbda727",
+      "name": "no_result_found",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-MLxMYk",
+        "say #!builtin_text-ghhOxf"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "08dc35def4",
+      "name": "Waiting_message",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Say_Shipment_tracking_info_node"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-A4cemR",
+        "say #!builtin_text-tP9u7D"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7e2a792e1d",
+      "name": "prefix_information",
+      "next": [
+        {
+          "condition": "true",
+          "node": "AWB_entering"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-t8U2Qd"
+      ],
+      "onReceive": [
+        "builtin/resetGlobalVariable {\"name\":\"prefix\"}",
+        "builtin/setVariable {\"type\":\"user\",\"name\":\"prefix\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "7ea84072ed",
+      "name": "node-5dad",
+      "next": [],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-3dbc10",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-3dbc10",
+      "flow": "skills/choice-3dbc10.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Yes]",
+          "condition": "temp['skill-choice-ret-723jg0ykrs'] == \"Yes\"",
+          "node": "choice-68f00b"
+        },
+        {
+          "caption": "User picked [No]",
+          "condition": "temp['skill-choice-ret-723jg0ykrs'] == \"No\"",
+          "node": "Bye"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "Error_fixing_oopss"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "74313635db",
+      "name": "tracking_intention",
+      "next": [
+        {
+          "condition": "event.nlu.intent.name === 'tracking'",
+          "node": "prefix_information"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

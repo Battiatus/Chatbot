@@ -1,0 +1,21 @@
+{
+  "name": "__qna__sf0wm69m1x_more_information_on_ecs",
+  "contexts": [
+    "global"
+  ],
+  "utterances": {
+    "en": [
+      "contact human",
+      "have human",
+      "speak to human",
+      "send mail to ECS",
+      "contact ECS",
+      "Contact Quito",
+      "send mail to Quito",
+      "contact commercial",
+      "phone ECS",
+      "phone Quito"
+    ]
+  },
+  "slots": []
+}

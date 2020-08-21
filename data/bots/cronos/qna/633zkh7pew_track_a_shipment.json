@@ -1,0 +1,31 @@
+{
+  "id": "633zkh7pew_track_a_shipment",
+  "data": {
+    "action": "text",
+    "contexts": [
+      "Tracking"
+    ],
+    "enabled": true,
+    "answers": {
+      "en": [
+        "#!builtin_text-t8U2Qd"
+      ]
+    },
+    "questions": {
+      "en": [
+        "Track a shipment",
+        "track",
+        "Tracking",
+        "tracking",
+        "shipment position",
+        "shipment status",
+        "package position",
+        "package status",
+        "I want to know where is my shipment",
+        "View status of my shipment"
+      ]
+    },
+    "redirectFlow": "",
+    "redirectNode": ""
+  }
+}

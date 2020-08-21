@@ -1,0 +1,14 @@
+{
+  "name": "tracking",
+  "utterances": {
+    "en": [
+      "Tracking a shipment",
+      "Track",
+      "track a shipment"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "Tracking"
+  ]
+}

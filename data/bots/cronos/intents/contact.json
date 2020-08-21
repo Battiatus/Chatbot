@@ -1,0 +1,13 @@
+{
+  "name": "contact",
+  "utterances": {
+    "en": [
+      "Contact",
+      "call"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "global"
+  ]
+}

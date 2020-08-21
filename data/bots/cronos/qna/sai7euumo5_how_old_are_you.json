@@ -1,0 +1,46 @@
+{
+  "id": "sai7euumo5_how_old_are_you",
+  "data": {
+    "questions": {
+      "en": [
+        "how old are you?",
+        "what's your age?",
+        "when were you born?",
+        "When were you created?",
+        "On which date were you born?",
+        "What age are you?",
+        "How many year have you been alive?",
+        "Since when have you been with us?",
+        "What is your birth year?",
+        "When did your existence start?"
+      ],
+      "fr": [
+        "Tu as quel âge?",
+        "Quel age as tu?",
+        "Ton age c'est quoi",
+        "Tu es vieux comment?",
+        "Vous êtes né quand",
+        "T'as quel age?",
+        "Ta naissance était quand?",
+        "À quel moment vous êtes né?",
+        "Tu a été conçu quand?",
+        "Ta création à eu lieu à quel moment?"
+      ]
+    },
+    "answers": {
+      "en": [
+        "I am a few days old only, so I'm still learning!😊"
+      ],
+      "fr": [
+        "J'ai suis né depuis quelques jours seulement, j'apprends encore!"
+      ]
+    },
+    "redirectFlow": "",
+    "redirectNode": "",
+    "action": "text",
+    "enabled": true,
+    "contexts": [
+      "global"
+    ]
+  }
+}

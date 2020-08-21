@@ -1,0 +1,363 @@
+[
+  {
+    "id": "builtin_text-L4GcJ0",
+    "formData": {
+      "text$en": "Hello!",
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-09-05T18:56:38.109Z",
+    "modifiedOn": "2020-07-06T19:45:25.666Z"
+  },
+  {
+    "id": "builtin_text-2ARQI7",
+    "formData": {
+      "text$en": "Thanks for your patience, here is the latest status of your shipment:\n\n**{{event.state.temp.status.lastpieces}} out of {{event.state.temp.status.pieces}} pieces / {{event.state.temp.status.lastweight}} out of {{event.state.temp.status.weight}} Kg were delivered in {{event.state.temp.status.lastposition}} on {{event.state.temp.status.updatetime}}.**\n\n-----------------------------------------------------------------------------------------------\nRecap of your shipment details:\n\n* AWB: {{event.state.temp.status.airlinecode}} - {{event.state.temp.status.awbnumber}}\n* Origin: {{event.state.temp.status.origin}}\n* Destination: {{event.state.temp.status.destination}}\n* {{event.state.temp.status.pieces}} piece(s), {{event.state.temp.status.weight}}Kg, {{event.state.temp.status.volume}}m3\n\n-----------------------------------------------------------------------------------------------\nIf you need more information, please click on this **<a href=\"https://shipment-tracking.ecsgroup.aero/#/{{event.state.temp.status.airlinecode}}-{{event.state.temp.status.awbnumber}}\" >link**.",
+      "typing$en": true,
+      "markdown$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-09-05T20:09:19.555Z",
+    "modifiedOn": "2020-07-15T13:25:22.226Z"
+  },
+  {
+    "id": "builtin_text-tC53zN",
+    "formData": {
+      "text$en": "Hello! I'm Kronos, a chatbot",
+      "typing$en": true,
+      "markdown$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-09-05T20:21:33.040Z",
+    "modifiedOn": "2020-07-06T19:47:03.827Z"
+  },
+  {
+    "id": "builtin_text-0LD-Ry",
+    "formData": {
+      "text$en": "Anything else",
+      "typing$en": true,
+      "markdown$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-09-05T21:10:00.216Z",
+    "modifiedOn": "2020-07-08T15:22:17.384Z"
+  },
+  {
+    "id": "builtin_text-FNcbJu",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "",
+      "variations$en": [
+        ""
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-06T19:48:48.984Z",
+    "modifiedOn": "2020-07-15T13:37:46.958Z"
+  },
+  {
+    "id": "builtin_text-Lutc4Z",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Sorry I didn't understand your request."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-06T19:58:04.166Z",
+    "modifiedOn": "2020-07-13T10:08:28.960Z"
+  },
+  {
+    "id": "builtin_text-U9UH-X",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "But don't worry, a great human being will be able to answer your question."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-08T13:22:55.039Z",
+    "modifiedOn": "2020-07-13T09:30:09.010Z"
+  },
+  {
+    "id": "builtin_text-TMRLRT",
+    "formData": {
+      "markdown$en": false,
+      "typing$en": true,
+      "text$en": "Just click on the following link: \nhttps://ecsgroup.aero/contact/"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-08T13:26:59.286Z",
+    "modifiedOn": "2020-07-15T13:25:10.319Z"
+  },
+  {
+    "id": "builtin_text-4fpfku",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please enter AWB number.",
+      "variations$en": [
+        "Please enter the AWB number."
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-08T21:33:25.965Z",
+    "modifiedOn": "2020-07-13T10:00:17.732Z"
+  },
+  {
+    "id": "builtin_text-mu55fj",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Thanks"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-09T09:06:32.515Z",
+    "modifiedOn": "2020-07-09T09:06:32.515Z"
+  },
+  {
+    "id": "builtin_text-ue8_MZ",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "🙇🏻‍♂️*Sorry, I'm still learning so I will be able to give you up to 03 segments of the shipment details. But don't worry, I'm learning....* 🙇🏻‍♂️\n\n---\n**Flight details**\n\n-----------------------------------------------------------------------------------------------\nBooked segment #1\n\n* Origin - Destination:  {{event.state.temp.status.flightsorigin}} - {{event.state.temp.status.flightsdest}}\n* Flight  - Aircraft Type: {{event.state.temp.status.flightscarrier}}{{event.state.temp.status.flightnumber}}  - {{event.state.temp.status.flightsaircraft}}\n* Dep (LT) - Arr (LT): {{event.state.temp.status.flightsarrival}} - {{event.state.temp.status.flightsdep}} (+1)\n* Pieces - Weight: {{event.state.temp.status.flightspieces}} pcs - {{event.state.temp.status.flightsweight}} kg\n\n-----------------------------------------------------------------------------------------------\nBooked segment #2\n\n* Origin - Destination:  {{event.state.temp.status.flightsorigin2}} - {{event.state.temp.status.flightsdest2}}\n* Flight  - Aircraft Type: {{event.state.temp.status.flightscarrier2}}{{event.state.temp.status.flightnumber2}}  - {{event.state.temp.status.flightsaircraft2}}\n* Dep (LT) - Arr (LT): {{event.state.temp.status.flightsarrival2}} - {{event.state.temp.status.flightsdep2}} (+1)\n* Pieces - Weight: {{event.state.temp.status.flightspieces2}} pcs - {{event.state.temp.status.flightsweight2}} kg\n\n-----------------------------------------------------------------------------------------------\nBooked segment #2\n\n* Origin - Destination:  {{event.state.temp.status.flightsorigin3}} - {{event.state.temp.status.flightsdest3}}\n* Flight  - Aircraft Type: {{event.state.temp.status.flightscarrier3}}{{event.state.temp.status.flightnumber3}}  - {{event.state.temp.status.flightsaircraft3}}\n* Dep (LT) - Arr (LT): {{event.state.temp.status.flightsarrival3}} - {{event.state.temp.status.flightsdep3}} (+1)\n* Pieces - Weight: {{event.state.temp.status.flightspieces3}} pcs - {{event.state.temp.status.flightsweight3}} kg\n\n-----------------------------------------------------------------------------------------------\nIf you need more information, please click on this **<a href=\"https://shipment-tracking.ecsgroup.aero/#/{{event.state.temp.status.airlinecode}}-{{event.state.temp.status.awbnumber}}\" >link**."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-11T14:46:59.321Z",
+    "modifiedOn": "2020-07-15T14:06:26.457Z"
+  },
+  {
+    "id": "builtin_text-Zpjs7a",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "**<a href=\"https://shipment-tracking.ecsgroup.aero/#/{{event.state.temp.status.airlinecode}}-{{event.state.temp.status.awbnumber}}\" >Pathfinder Web page**."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-11T21:42:39.420Z",
+    "modifiedOn": "2020-07-15T13:24:44.972Z"
+  },
+  {
+    "id": "builtin_text-gv6bbm",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Ok. Let me know if you need anything else 😊"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T13:12:24.523Z",
+    "modifiedOn": "2020-07-13T11:15:41.278Z"
+  },
+  {
+    "id": "builtin_text-bkjpDx",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Sorry I didn't understand."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T13:17:09.911Z",
+    "modifiedOn": "2020-07-17T07:44:36.266Z"
+  },
+  {
+    "id": "builtin_text-s4xlEN",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Ok let us exchange."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T14:12:16.172Z",
+    "modifiedOn": "2020-07-12T14:12:16.172Z"
+  },
+  {
+    "id": "builtin_text-_w3TaR",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "But please don't forget I'm still learning so please be indulgent🥺"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T14:14:04.671Z",
+    "modifiedOn": "2020-07-12T14:14:04.671Z"
+  },
+  {
+    "id": "builtin_text-rIM1Ti",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Could you please reformulate or could you please re-type it again?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T14:22:55.291Z",
+    "modifiedOn": "2020-07-13T10:08:37.769Z"
+  },
+  {
+    "id": "builtin_text-A4cai5",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please enter your mail address"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T16:15:49.454Z",
+    "modifiedOn": "2020-07-12T16:15:49.454Z"
+  },
+  {
+    "id": "builtin_text-WChlx9",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please verify your mail address. I just sent you a mail"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-12T16:22:55.444Z",
+    "modifiedOn": "2020-07-15T10:24:04.598Z"
+  },
+  {
+    "id": "builtin_text-yuWaxj",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "To facilitate the interaction, could you please give me your name?",
+      "variations$en": [
+        "To facilitate the interaction, please give me your name.",
+        "To facilitate the interaction, may you please give me your name?"
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T07:45:43.068Z",
+    "modifiedOn": "2020-07-13T09:55:34.693Z"
+  },
+  {
+    "id": "builtin_text-ldwMja",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "👋, {{user.username}}!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T07:50:25.851Z",
+    "modifiedOn": "2020-07-13T07:50:25.851Z"
+  },
+  {
+    "id": "builtin_text-UH42If",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "This is the first time we speak {{user.username}} 😊"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T08:01:38.393Z",
+    "modifiedOn": "2020-07-13T11:09:22.212Z"
+  },
+  {
+    "id": "builtin_text-LIwVLy",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "How can I help you?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T08:02:03.213Z",
+    "modifiedOn": "2020-07-13T08:02:03.213Z"
+  },
+  {
+    "id": "builtin_text-8S7KfG",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "We already spoke {{temp.$r}} times!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T08:03:42.204Z",
+    "modifiedOn": "2020-07-13T08:03:42.204Z"
+  },
+  {
+    "id": "builtin_text-01Wqv_",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "How can I help you this time?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T08:04:06.031Z",
+    "modifiedOn": "2020-07-13T08:04:06.031Z"
+  },
+  {
+    "id": "builtin_text-PVxgrI",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Alright, I have forgotten your name."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T08:07:20.273Z",
+    "modifiedOn": "2020-07-13T08:07:28.872Z"
+  },
+  {
+    "id": "builtin_text-MLxMYk",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "No cargo found with AWB {{user.prefix}}-{{user.awb}}."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-14T12:20:14.323Z",
+    "modifiedOn": "2020-07-14T12:29:34.513Z"
+  },
+  {
+    "id": "builtin_text-A4cemR",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Looking status of cargo with AWB {{user.prefix}}-{{user.awb}}..."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-14T12:22:20.342Z",
+    "modifiedOn": "2020-07-14T12:28:32.315Z"
+  },
+  {
+    "id": "builtin_text-tP9u7D",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "This may take a while, thanks for your patience.."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-14T12:22:36.844Z",
+    "modifiedOn": "2020-07-14T12:22:36.844Z"
+  },
+  {
+    "id": "builtin_text-ghhOxf",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Check your AWB number and try again."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-14T12:29:44.923Z",
+    "modifiedOn": "2020-07-14T12:29:44.923Z"
+  },
+  {
+    "id": "builtin_text-t8U2Qd",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please enter your airline prefix"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-15T07:54:35.726Z",
+    "modifiedOn": "2020-07-15T07:54:35.726Z"
+  },
+  {
+    "id": "builtin_text-E-hZUr",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Do you need anything else?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-15T13:28:21.948Z",
+    "modifiedOn": "2020-07-15T13:28:21.948Z"
+  }
+]
